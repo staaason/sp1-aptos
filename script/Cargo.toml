@@ -1,0 +1,42 @@
+[package]
+version = "0.1.0"
+name = "aptos-lc-script"
+edition = "2021"
+default-run = "epoch_change"
+
+[[bin]]
+name = "epoch_change"
+path = "src/bin/epoch_change.rs"
+
+[[bin]]
+name = "inclusion"
+path = "src/bin/inclusion.rs"
+
+[[bin]]
+name = "proof_server"
+path = "src/bin/proof_server.rs"
+
+
+[dependencies]
+sp1-sdk = "2.0.0"
+serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
+serde = { version = "1.0", default-features = false, features = ["derive"] }
+clap = { version = "4.0", features = ["derive", "env"] }
+tracing = "0.1.40"
+hex = "0.4.3"
+aptos-lc-core = {path = "../core", features = ["aptos"]}
+anyhow = "1.0.86"
+bcs = { git = "https://github.com/aptos-labs/bcs.git", rev = "d31fab9d81748e2594be5cd5cdf845786a30562d" }
+getset = "0.1.3"
+thiserror = "1.0.63"
+tokio = {version = "1.40.0", features = ["full"]}
+axum = {version = "0.7.7"}
+env_logger = "0.11.5"
+reqwest = "0.12.5"
+
+[build-dependencies]
+sp1-helper = "2.0.0"
+
+[[bench]]
+name = "proof_server"
+harness = false
