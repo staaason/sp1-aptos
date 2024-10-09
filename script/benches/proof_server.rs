@@ -171,8 +171,8 @@ async fn start_primary_server(
         ])
         .env("RUST_LOG", rust_log)
         .env("RUSTFLAGS", rustflags)
-        .env("SHARD_SIZE", shard_size)
-        .env("SHARD_BATCH_SIZE", shard_batch_size)
+        // .env("SHARD_SIZE", shard_size)
+        // .env("SHARD_BATCH_SIZE", shard_batch_size)
         .spawn()
         .map_err(|e| anyhow!(e))?;
 
@@ -234,8 +234,8 @@ async fn start_secondary_server(
         ])
         .env("RUST_LOG", rust_log)
         .env("RUSTFLAGS", rustflags)
-        .env("SHARD_SIZE", shard_size)
-        .env("SHARD_BATCH_SIZE", shard_batch_size)
+        // .env("SHARD_SIZE", shard_size)
+        // .env("SHARD_BATCH_SIZE", shard_batch_size)
         .spawn()
         .map_err(|e| anyhow!(e))?;
 

@@ -40,3 +40,7 @@ sp1-helper = "2.0.0"
 [[bench]]
 name = "proof_server"
 harness = false
+
+[features]
+cuda = ["sp1-sdk/cuda"]
+gnark = ["sp1-sdk/native-gnark"]
